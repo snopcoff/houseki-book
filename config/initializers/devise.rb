@@ -13,7 +13,6 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.authentication_keys = [:login]
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -108,7 +107,7 @@ Devise.setup do |config|
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 11
 
-  config.omniauth :facebook, "1111340368890733", "79deeab2901ba1aa4e3d65be71c85c10"
+  config.omniauth :facebook, "1070351356411422", "8c2303a050533003406f6e1f9d4ae916"
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = '0dfcda9037adf33189d91c27b62650c8e799a1ce70283fee69f93fabeeb67f353165132996e66364399ba9368bf9ff38e82aa95c653e612fbf852125d5e7d4bb'

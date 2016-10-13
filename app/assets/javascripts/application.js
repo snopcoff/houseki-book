@@ -18,13 +18,52 @@ var flash = function(){
   setTimeout(function(){
     $('.alert').slideUp(500);
   }, 2000);
-  var x = $(window).height();
-  var y = x - 60;
-  $('.content').css('min-height', x);
-  $('.page-content').css('min-height', x);
-  $('.signin').css('min-height', y);
 };
 
 $(document).ready(flash);
 $(document).on('page:load', flash);
 $(document).on('page:change', flash);
+
+document.addEventListener("turbolinks:load", function() {
+  function myFunction(id) {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-theme-d1";
+      } else {
+          x.className = x.className.replace("w3-show", "");
+          x.previousElementSibling.className =
+          x.previousElementSibling.className.replace(" w3-theme-d1", "");
+      }
+  }
+
+  function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else {
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
+});
+
+function myFunction(id) {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-theme-d1";
+      } else {
+          x.className = x.className.replace("w3-show", "");
+          x.previousElementSibling.className =
+          x.previousElementSibling.className.replace(" w3-theme-d1", "");
+      }
+  }
+
+  function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else {
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
