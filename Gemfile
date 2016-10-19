@@ -14,6 +14,8 @@ gem "jbuilder", "~> 2.5"
 gem "devise"
 gem "omniauth-facebook"
 gem "config"
+gem "cancancan", "~> 1.10"
+gem "kaminari"
 
 group :development, :test do
   gem "byebug", platform: :mri
