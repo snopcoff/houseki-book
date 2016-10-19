@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
+  layout :layout_by_user
 
   def home
 
@@ -15,5 +16,20 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: added_attrs_2
+  end
+
+  private
+  def after_sign_in_path_for user
+    current_user.is_admin? ? admin_root_url : root_url
+  end
+
+  def layout_by_user
+    if user_signed_in? && current_user.is_admin?
+      "admin"
+    elsif user_signed_in? && !current_user.is_admin?
+      "user"
+    else
+      "application"
+    end
   end
 end

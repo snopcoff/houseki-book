@@ -46,3 +46,42 @@ en:
     title: Title
     dropdown: Dropdown
   edit: Edit
+  categoryindex:
+    update_success: Update Successfully
+    create_success: Create Successfully
+    delete_success: Delete Successfully
+    create: Create
+    create_category: Create categories
+    cate_new: New Category
+  flash:
+    cate_nil: Category is not exist
+  page:
+    categories: Categories
+  destroy:
+    confirm: Are you sure?
+    button: Destroy
+  books:
+    new:
+      namesite: "Add new book"
+      title: "Title"
+      author: "Author"
+      publish_date: "Publish date"
+      publish_date_form: "Use format: yyyy/mm/dd"
+      category: "Category"
+      category_form: "Please select the category of this book"
+      pages: "Pages"
+      created_at: "Created"
+      updated_at: "Last edit"
+      save: "Save"
+    index:
+      title: "All book"
+      favorite: "User favorite"
+    edit:
+      title: "Edit"
+    show:
+      favorite: "Mask as Favourite"
+      unfavorite: "Remove Favourite"
+      addtofavorite: "Added to my favorite"
+      removefavorite: "Favorite deleted"
+      markread: "Mark as read"
+      wasread: "Marked as read"
