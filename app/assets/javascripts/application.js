@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-datepicker
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -23,6 +24,19 @@ var flash = function(){
 $(document).ready(flash);
 $(document).on('page:load', flash);
 $(document).on('page:change', flash);
+
+var datepicker = function(){
+  $(document).on('focus', '.datepicker', function(){
+    $(this).datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      todayHighlight: true
+   });
+  });
+};
+$(document).ready(datepicker);
+$(document).on('page:load', datepicker);
+$(document).on('page:change', datepicker);
 
 document.addEventListener("turbolinks:load", function() {
   function myFunction(id) {
