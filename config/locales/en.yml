@@ -1,5 +1,17 @@
 en:
-  hello: "Hello world"
+  datetime: &datetime
+    formats:
+      default: "%d/%m/%Y"
+      short: "%m - %Y"
+      day_month: "%d/%m"
+      long: "%H:%M, %d/%m,%Y"
+
+  date:
+    <<: *datetime
+
+  time:
+    <<: *datetime
+
   devise:
     log_in: Sign in
     sign_up: Sign up
@@ -57,6 +69,7 @@ en:
     cate_nil: Category is not exist
   page:
     categories: Categories
+    books: Books
   destroy:
     confirm: Are you sure?
     button: Destroy
@@ -65,7 +78,7 @@ en:
       namesite: "Add new book"
       title: "Title"
       author: "Author"
-      publish_date: "Publish date"
+      publish_time: "Publish date"
       publish_date_form: "Use format: yyyy/mm/dd"
       category: "Category"
       category_form: "Please select the category of this book"
@@ -73,6 +86,7 @@ en:
       created_at: "Created"
       updated_at: "Last edit"
       save: "Save"
+      description: Description
     index:
       title: "All book"
       favorite: "User favorite"
@@ -85,3 +99,31 @@ en:
       removefavorite: "Favorite deleted"
       markread: "Mark as read"
       wasread: "Marked as read"
+    create: Create book
+  activerecord:
+    controllers:
+      users:
+        success: "Create user successful!"
+      admin:
+        destroy:
+          success: "Delete successful!"
+          danger: "Delete fail!"
+        update:
+          success: "Update successful!"
+          danger: "Update fails, please try again!"
+      request:
+        create:
+          success: "Send request successful!"
+          danger: "Send request fail!"
+        destroy:
+          success: "Delete request successful!"
+          danger: "Delete request fail!"
+  shared:
+    error_messages:
+      title: "The form contains"
+      error: "error"
+  error:
+    fail: "Sorry, something went wrong"
+    errors: "Error"
+    messengers: "The form contains "
+  action: Action

@@ -1,6 +1,10 @@
 <tr>
   <td><%= category.name %></td>
   <td>
+    <%= link_to t("books.create"), new_admin_book_path(category),
+      class: "btn btn-primary hvr-pulse-shrink" %>
+  </td>
+  <td>
     <%= link_to "Edit", edit_admin_category_path(category),
       class: "btn btn-primary hvr-pulse-shrink" %>
   </td>

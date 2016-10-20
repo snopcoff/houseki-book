@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20161017075609) do
     t.integer  "pages"
     t.string   "author"
     t.date     "publish_time"
+    t.string   "picture"
     t.integer  "category_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
