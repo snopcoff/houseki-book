@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :books
   end
+  resources :categories
+  resources :books do
+    resources :reviews
+  end
 end

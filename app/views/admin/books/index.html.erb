@@ -10,6 +10,7 @@
       <th class="col-md-2"><%= t "books.new.publish_time" %></th>
       <th class="col-md-1"><%= t "books.new.pages" %></th>
       <th><%= t :action %></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +24,11 @@
         <td>
           <%= link_to t("action.edit"), edit_admin_book_path(book),
             class:"btn btn-warning" %>
+        </td>
+        <td>
+          <%= link_to t("destroy.button"), admin_book_path(book),
+            method: :delete, class: "btn btn-danger hvr-pulse-shrink",
+            data: {confirm: t("destroy.confirm")} %>
         </td>
       </tr>
     <% end %>

@@ -6,6 +6,23 @@
   padding: 0;
 }
 
+.width {
+  width: 100%;
+}
+
+.fix-height {
+  height: 200px;
+}
+
+.padding-top {
+  padding-top: 20px;
+  color: #FFF;
+}
+
+.margin-top {
+  margin-top: 20px !important;
+}
+
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 html{
@@ -308,4 +325,20 @@ footer {
 }
 .padding {
   padding-top: 50px;
+}
+.td-user-books {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  a {
+    display: block;
+  }
+}
+.well {
+  background-color: #FFF;
+}
+.td-image-auto {
+  margin: 0 auto;
+}
+.td-white_space {
+  white-space: pre-line;
 }
