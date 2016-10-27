@@ -67,6 +67,7 @@ en:
     cate_new: New Category
   flash:
     cate_nil: Category is not exist
+    book_nil: Book is not exist
   page:
     categories: Categories
     books: Books
@@ -127,3 +128,7 @@ en:
     errors: "Error"
     messengers: "The form contains "
   action: Action
+  reviews:
+    danger: create reviews fail
+    success: create reviews Successfully
+    create: Create Review

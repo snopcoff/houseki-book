@@ -1,0 +1,13 @@
+<%= form_for [@book, review] do |f| %>
+  <div class="row review_form">
+    <%= render "shared/error_messages", object: review %>
+    <div>
+      <%= f.label :content, t("reviews.content") %>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-2 pull-right">
+    <%= f.submit t("reviews.create"), class: "btn btn-primary margin-top" %>
+  </div>
+  <div class="clearfix"></div>
+<% end %>
