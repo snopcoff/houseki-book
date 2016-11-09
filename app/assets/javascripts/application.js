@@ -13,8 +13,11 @@
 //= require jquery
 //= require bootstrap-datepicker
 //= require jquery_ujs
+//= require jquery.raty
+//= require ratyrate
 //= require turbolinks
 //= require_tree .
+
 var flash = function(){
   setTimeout(function(){
     $('.alert').slideUp(500);
@@ -59,25 +62,33 @@ document.addEventListener("turbolinks:load", function() {
           x.className = x.className.replace(" w3-show", "");
       }
   }
+
+  $.each($('#text'), function() {
+    var offset = this.offsetHeight - this.clientHeight;
+    var resizeTextarea = function(el) {
+      $(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+    };
+    $(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
+  })
 });
 
 function myFunction(id) {
-      var x = document.getElementById(id);
-      if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-          x.previousElementSibling.className += " w3-theme-d1";
-      } else {
-          x.className = x.className.replace("w3-show", "");
-          x.previousElementSibling.className =
-          x.previousElementSibling.className.replace(" w3-theme-d1", "");
-      }
-  }
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
 
-  function openNav() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-      } else {
-          x.className = x.className.replace(" w3-show", "");
-      }
-  }
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}

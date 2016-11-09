@@ -28,12 +28,3 @@
   <%= link_to t("devise.not_unlock"),
     new_unlock_path(resource_name) %><br />
 <% end %>
-
-<% if devise_mapping.omniauthable? %>
-  <% resource_class.omniauth_providers.each do |provider| %>
-    <p><%= t :or %></p>
-    <%= link_to t("devise.omniauth"),
-      omniauth_authorize_path(resource_name, provider),
-      class:"btn btn-primary hvr-pulse-shrink" %><br />
-  <% end %>
-<% end %>

@@ -19,6 +19,7 @@ gem "kaminari"
 gem "bootstrap-datepicker-rails"
 gem "mini_magick", "3.8.0"
 gem "carrierwave", "0.10.0"
+gem "ratyrate"
 
 group :development, :test do
   gem "byebug", platform: :mri

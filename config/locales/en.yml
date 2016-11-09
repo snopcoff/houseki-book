@@ -132,3 +132,4 @@ en:
     danger: create reviews fail
     success: create reviews Successfully
     create: Create Review
+  no_content: No review was created
