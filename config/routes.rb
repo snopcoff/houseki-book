@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post "/rate" => "rater#create", :as => "rate"
+
   root "static_pages#home"
 
   devise_for :users, path: "", path_names: {sign_in: "login", sign_out: "logout"},
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :books do
-    resources :reviews
+    resources :reviews do
+      resources :comments
+    end
   end
 end

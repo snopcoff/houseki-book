@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   ratyrate_rater
   has_many :reviews, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
@@ -8,6 +9,10 @@ class User < ApplicationRecord
     :rememberable, :validatable, :recoverable,
     :omniauthable, :omniauth_providers => [:facebook]
   attr_accessor :login
+
+  def is_user? current_user
+    self == current_user
+  end
 
   class << self
     def from_omniauth auth
