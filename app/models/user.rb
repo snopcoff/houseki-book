@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+  ratyrate_rater
   has_many :reviews, dependent: :destroy
+
+  mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
     :rememberable, :validatable, :recoverable,

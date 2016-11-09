@@ -1,9 +1,9 @@
 <%= form_for [@book, review] do |f| %>
   <div class="row review_form">
     <%= render "shared/error_messages", object: review %>
-    <div>
+    <div class="td-review-create">
       <%= f.label :content, t("reviews.content") %>
-      <%= f.text_area :content, class: "form-control" %>
+      <%= f.text_area :content, class: "form-control", id: "text" %>
     </div>
   </div>
   <div class="col-md-2 pull-right">

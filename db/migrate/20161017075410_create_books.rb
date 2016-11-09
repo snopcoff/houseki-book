@@ -7,6 +7,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :author
       t.date :publish_time
       t.string :picture
+      t.string :favorite
       t.references :category, index: true, foreign_key: true
 
       t.timestamps

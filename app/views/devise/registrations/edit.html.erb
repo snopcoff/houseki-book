@@ -37,6 +37,11 @@
     </div>
 
     <div class="input">
+      <%= f.label :avatar %><br />
+      <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+    </div>
+
+    <div class="input">
       <%= f.label :current_password %> <i><%= t("devise.need") %></i><br />
       <%= f.password_field :current_password, autocomplete: "off",
         class: "form-control signin-input" %>

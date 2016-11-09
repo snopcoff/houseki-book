@@ -1,5 +1,6 @@
 class Admin::BooksController < ApplicationController
   before_action :find_book, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @books = Book.order_by_time.page(params[:page]).per Settings.size

@@ -6,12 +6,14 @@
     </div>
 
     <div class="td-invoice-content">
-      <div class="td-invoice-content-left">
+      <div class="td-invoice-content-left text-center">
         <% unless @book.picture.url.nil? %>
           <%= image_tag @book.picture.url, class: "width fix-height" %>
         <% else %>
           <%= image_tag "books.jpg", class: "width fix-height" %>
         <% end %>
+        <%= rating_for @book, "favorite", :half_show => true, path: "star_icons",
+          star: 10, enable_half: true %>
       </div>
       <div class="td-invoice-content-right">
         <div class="td-line">

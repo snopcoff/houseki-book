@@ -53,7 +53,7 @@
     </li>
 
     <li>
-      <a href="#" class="w3-padding-large w3-theme-d4">
+      <a href="<%= root_path %>" class="w3-padding-large w3-theme-d4">
         <i class="fa fa-home w3-margin-right"></i>
         <%= t "header.logo" %>
       </a>
@@ -89,7 +89,11 @@
     </li>
     <li class="w3-hide-small w3-right w3-dropdown-hover">
       <a href="#" class="w3-padding-large w3-hover-white" title="My Account">
-        <img src="http://www.w3schools.com/css/img_fjords.jpg" class="w3-circle td-img" alt="Avatar">
+        <% unless current_user.avatar.url.nil? %>
+          <%= image_tag current_user.avatar.url, class: "w3-circle td-img" %>
+        <% else %>
+          <%= image_tag "noprofile.jpg", class: "w3-circle td-img" %>
+        <% end %>
       </a>
       <div class="w3-dropdown-content w3-white w3-card-4 td-dropdown-fix">
         <%= link_to t("home.profile"), edit_user_registration_path %>

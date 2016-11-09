@@ -342,3 +342,15 @@ footer {
 .td-white_space {
   white-space: pre-line;
 }
+
+.td-img-avatar {
+  width: 106px !important;
+  height: 106px !important;
+}
+
+.td-review-create {
+  textarea {
+    resize: none;
+    border: 2px solid #a9a9a9 !important;
+  }
+}
