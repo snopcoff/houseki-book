@@ -153,6 +153,20 @@
           <button type="button" class="w3-btn w3-theme-d2 w3-margin-bottom">
             <i class="fa fa-comment"></i> <%= t "home.comment" %>
           </button>
+          <% unless current_user.nil? %>
+            <div style="margin: 20px 0;">
+              Comment
+              <%= render "comments/comment_form",book: review.book, review: review,
+                comment: review.user.comments.build %>
+            </div>
+          <% end %>
+          <div class="comments">
+            <% if review.comments.any? %>
+              <% review.comments.each do |comment| %>
+                <%= render "comments/comment", comment: comment %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
         <% end %>
       <% else %>

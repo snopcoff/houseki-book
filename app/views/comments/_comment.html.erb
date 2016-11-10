@@ -1,0 +1,15 @@
+<div class="comment">
+  <%= comment.user.username %>
+  <span class="time-ago-in-words pull-right">
+    <%= time_ago_in_words(comment.created_at) %>
+    <%= t("views.activities.ago") %>
+  </span>
+  <div><%= comment.content %></div>
+  <div>
+    <% if comment.user.is_user? (current_user) %>
+      <%= link_to "Edit", edit_book_review_comment_path(comment.review.book, comment.review, comment) %>
+      <%= link_to "Delete", book_review_comment_path(comment.review.book, comment.review, comment),
+        method: :delete, data: {confirm: "Are you sure??"} %>
+    <% end %>
+  </div>
+</div>
