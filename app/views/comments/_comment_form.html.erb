@@ -1,4 +1,6 @@
-<%= form_for [book, review, comment] do |f| %>
+<%= form_for [book, review, comment], remote: true do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.text_field :content, class: "form-control" %>
+  <div id="comment_field">
+    <%= f.text_field :content, class: "form-control", id: "comment-content-#{comment.id}" %>
+  </div>
 <% end %>

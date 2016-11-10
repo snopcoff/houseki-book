@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
     @comment = @review.comments.build comment_params
     if @comment.save
       flash[:success] = "Create comment success"
-      redirect_to root_url
     else
       flash[:danger] = "Create comment fail"
       render @book
@@ -24,7 +23,6 @@ class CommentsController < ApplicationController
   def update
     if @comment.update comment_params
       flash[:success] = "Update comment success"
-      redirect_to root_url
     else
       flash[:danger] = "Update comment fail"
       render :edit
