@@ -354,3 +354,23 @@ footer {
     border: 2px solid #a9a9a9 !important;
   }
 }
+
+.bold {
+  font-weight: 600;
+  color: #428bca;
+  font-size: 20px;
+  display: inline-flex;
+  position: absolute;
+  margin-left: 10px;
+}
+
+.td-comment-content {
+  padding-left: 50px;
+}
+
+.comment {
+  margin-bottom: 30px;
+  hr {
+    margin: 10px 0 !important;
+  }
+}

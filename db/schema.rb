@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20161109162056) do
     t.string   "author"
     t.date     "publish_time"
     t.string   "picture"
+    t.string   "favorite"
     t.integer  "category_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
