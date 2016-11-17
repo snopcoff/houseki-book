@@ -12,8 +12,9 @@
         <% else %>
           <%= image_tag "books.jpg", class: "width fix-height" %>
         <% end %>
-        <%= rating_for @book, "favorite", :half_show => true, path: "star_icons",
-          star: 10, enable_half: true %>
+        <div id="td-rate-book">
+          <%= render "book_rate" %>
+        </div>
       </div>
       <div class="td-invoice-content-right">
         <div class="td-line">
@@ -69,12 +70,14 @@
     <div class="clearfix"></div>
   </div>
 
-  <div class="td-invoice-box padding">
-    <div id="review_form">
-      <%= render "shared/review_form", review: @review_new %>
-    </div>
+  <% unless current_user.nil? %>
+    <div class="td-invoice-box padding">
+      <div id="review_form">
+        <%= render "shared/review_form", review: @review_new %>
+      </div>
     <br>
-  </div>
+    </div>
+  <% end %>
 
   <div class="padding">
     <% unless @reviews.blank? %>

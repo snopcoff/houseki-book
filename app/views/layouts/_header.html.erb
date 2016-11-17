@@ -1,5 +1,5 @@
 <% unless user_signed_in? %>
-  <nav class="navbar navbar-default navbar-inverse td-nav" role="navigation">
+  <nav class="navbar navbar-default td-background td-nav" role="navigation">
     <div class="container">
       <div class="row">
         <div class="navbar-header">
@@ -10,6 +10,16 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand active" href="#"><%= t :title %></a>
+          <li class="w3-hide-small w3-dropdown-hover">
+            <a href="#" class="navbar-brand" title="Categories">
+              <%= t "books.new.category" %>
+            </a>
+            <div class="w3-dropdown-content td-dropdown-content w3-white w3-card-4">
+              <% Category.all.each do |f| %>
+                <%= link_to f.name, category_path(f) %>
+              <% end %>
+            </div>
+          </li>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -53,20 +63,22 @@
       </div>
     </li>
 
-    <li class="w3-hide-small w3-right w3-dropdown-hover">
-      <a href="#" class="w3-padding-large w3-hover-white" title="My Account">
-        <% unless current_user.avatar.url.nil? %>
-          <%= image_tag current_user.avatar.url, class: "w3-circle td-img" %>
-        <% else %>
-          <%= image_tag "noprofile.jpg", class: "w3-circle td-img" %>
-        <% end %>
-      </a>
-      <div class="w3-dropdown-content w3-white w3-card-4 td-dropdown-fix">
-        <%= link_to t("home.profile"), edit_user_registration_path %>
-        <a href="#"><%= t "header.link" %></a>
-        <%= link_to t(:log_out), destroy_user_session_path, method: :delete %>
-      </div>
-    </li>
+    <% unless current_user.nil? %>
+      <li class="w3-hide-small w3-right w3-dropdown-hover">
+        <a href="#" class="w3-padding-large w3-hover-white" title="My Account">
+          <% unless current_user.avatar.url.nil? %>
+            <%= image_tag current_user.avatar.url, class: "w3-circle td-img" %>
+          <% else %>
+            <%= image_tag "noprofile.jpg", class: "w3-circle td-img" %>
+          <% end %>
+        </a>
+        <div class="w3-dropdown-content w3-white w3-card-4 td-dropdown-fix">
+          <%= link_to t("home.profile"), edit_user_registration_path %>
+          <a href="#"><%= t "header.link" %></a>
+          <%= link_to t(:log_out), destroy_user_session_path, method: :delete %>
+        </div>
+      </li>
+    <% end %>
    </ul>
   </div>
 
