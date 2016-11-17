@@ -12,6 +12,7 @@ en:
   time:
     <<: *datetime
 
+  search: Search
   devise:
     log_in: Sign in
     sign_up: Sign up
@@ -35,7 +36,7 @@ en:
   log_out: Log out
   cancel_my_account: Cancel my account
   home:
-    group: My Groups
+    reviews: "My Reviews"
     events: My Events
     text: Some other text.
     photos:  My Photos
@@ -58,6 +59,7 @@ en:
     title: Title
     dropdown: Dropdown
   edit: Edit
+  delete: Delete
   categoryindex:
     update_success: Update Successfully
     create_success: Create Successfully
@@ -132,4 +134,8 @@ en:
     danger: create reviews fail
     success: create reviews Successfully
     create: Create Review
+    update_success: Update reviews Successfully
+    update_danger: Update reviews fail
   no_content: No review was created
+  load_more: Load More
+  show_less: Show Less

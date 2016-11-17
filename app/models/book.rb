@@ -14,4 +14,5 @@ class Book < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   scope :order_by_time, -> {order created_at: :desc}
+  scope :random, -> {order "RANDOM()"}
 end

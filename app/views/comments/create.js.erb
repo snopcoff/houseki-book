@@ -1,3 +1,3 @@
-$(".comments").append(
-  '<%= j render "comments/comment", comment: @comment, review: @review %>');
-$("#comment-content-").val("");
+$("#comments_<%= @review.id %>").html(
+  '<%= j render @comments %>');
+$("#comment-content-<%= @review.id %>").val("");

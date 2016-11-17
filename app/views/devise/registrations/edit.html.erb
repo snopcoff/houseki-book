@@ -8,11 +8,11 @@
     html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
-     <div class="input">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true,
-          class: "form-control signin-input" %>
-      </div>
+    <div class="input">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true,
+        class: "form-control signin-input" %>
+    </div>
 
     <div class="input">
       <%= f.label :username %><br />
@@ -39,6 +39,11 @@
     <div class="input">
       <%= f.label :avatar %><br />
       <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+    </div>
+
+    <div class="input">
+      <%= f.label :feelings %><br />
+      <%= f.text_field :feelings, class: "form-control signin-input" %>
     </div>
 
     <div class="input">

@@ -13,10 +13,8 @@ class Ability
       if user.is_admin?
         cannot :manage, :all
       else
-        can :read, Subject
-        can [:read, :create, :update], Exam
+        can :manage, Review, user_id: user.id
       end
     end
   end
 end
-Contact GitHub API Training Shop Blog About
