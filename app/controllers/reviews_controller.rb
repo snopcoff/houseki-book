@@ -35,14 +35,10 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update_attributes review_params
-      @review_new = @book.reviews.new
-      @comment_new = Comment.new
-      respond_to do |format|
-        format.html {redirect_to @book}
-        format.js
-      end
+      flash[:success] = t "reviews.update_success"
+      redirect_to category_path
     else
-      flash[:danger] = t "reviews.danger"
+      flash[:danger] = t "reviews.update_danger"
       render :edit
     end
   end

@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20161109162056) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
+    t.string   "feelings"
     t.boolean  "is_admin",               default: false
     t.string   "provider"
     t.string   "uid"

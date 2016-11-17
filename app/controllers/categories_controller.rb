@@ -2,8 +2,9 @@ class CategoriesController < ApplicationController
   before_action :find_category, except: [:index, :new, :create]
 
   def show
-    @books = @category.books
     @categories = Category.all
+    @q = @category.books.ransack params[:q]
+    @books = @q.result.page(params[:page]).per Settings.default_size
   end
 
   private

@@ -10,10 +10,10 @@ class CommentsController < ApplicationController
   def create
     @comment = @review.comments.build comment_params
     if @comment.save
+      @comments = @review.comments.order_by_time
       flash[:success] = "Create comment success"
     else
       flash[:danger] = "Create comment fail"
-      render @book
     end
   end
 
@@ -23,19 +23,19 @@ class CommentsController < ApplicationController
   def update
     if @comment.update comment_params
       flash[:success] = "Update comment success"
+      @comments = @review.comments.order_by_time
     else
       flash[:danger] = "Update comment fail"
-      render :edit
     end
   end
 
   def destroy
     if @comment.destroy
+      @comments = @review.comments.order_by_time
       flash[:success] = "Delete comment success"
     else
       flash[:danger] = "Delete comment fail"
     end
-    redirect_to root_url
   end
 
   private

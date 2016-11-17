@@ -17,9 +17,11 @@ gem "config"
 gem "cancancan", "~> 1.10"
 gem "kaminari"
 gem "bootstrap-datepicker-rails"
-gem "mini_magick", "3.8.0"
 gem "carrierwave", "0.10.0"
 gem "ratyrate"
+gem "cloudinary"
+gem "font-awesome-rails"
+gem "ransack"
 
 group :development, :test do
   gem "byebug", platform: :mri

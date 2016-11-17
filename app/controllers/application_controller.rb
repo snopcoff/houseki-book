@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   layout :layout_by_user
 
+  include CanCan::ControllerAdditions
+
   def home
 
   end
@@ -13,8 +15,10 @@ class ApplicationController < ActionController::Base
     added_attrs = [:username, :email, :password, :password_confirmation,
       :avatar]
     added_attrs_2 = [:email, :password, :remember_me]
+    added_attrs_3 = [:username, :email, :password, :password_confirmation,
+      :avatar, :feelings]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs_3
     devise_parameter_sanitizer.permit :sign_in, keys: added_attrs_2
   end
 
@@ -38,5 +42,12 @@ class ApplicationController < ActionController::Base
       flash[:danger] = t "error.fail"
       redirect_to root_url
     end
+  end
+
+  def current_ability
+    controller_name_segments = params[:controller].split('/')
+    controller_name_segments.pop
+    controller_namespace = controller_name_segments.join('/').camelize
+    Ability.new current_user, controller_namespace
   end
 end
