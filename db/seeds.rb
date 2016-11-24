@@ -22,7 +22,18 @@ Category.create! name: "Love Story"
     pages: 1200,
     author: "Author-#{n+1}",
     publish_time: "1/1/2011",
-    category_id: 1
+    category_id: 1,
+  )
+end
+
+5.times do |n|
+  Book.create!(
+    title: "Test Ipsum-#{n+1}",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu. Phasellus luctus rutrum quam, id fermentum nisl. Vestibulum quis massa at est commodo porta non et nulla. ",
+    pages: 1200,
+    author: "Author-#{n+1}",
+    publish_time: "1/1/2011",
+    category_id: 1,
   )
 end
 
@@ -33,7 +44,18 @@ end
     pages: 1200,
     author: "Author-#{n+1}",
     publish_time: "1/1/2011",
-    category_id: 2
+    category_id: 2,
+  )
+end
+
+5.times do |n|
+  Book.create!(
+    title: "Test Ipsum-#{n+6}",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu. Phasellus luctus rutrum quam, id fermentum nisl. Vestibulum quis massa at est commodo porta non et nulla. ",
+    pages: 1200,
+    author: "Author-#{n+1}",
+    publish_time: "1/1/2011",
+    category_id: 2,
   )
 end
 
@@ -44,7 +66,18 @@ end
     pages: 1200,
     author: "Author-#{n+1}",
     publish_time: "1/1/2011",
-    category_id: 3
+    category_id: 3,
+  )
+end
+
+5.times do |n|
+  Book.create!(
+    title: "Test Ipsum-#{n+12}",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu. Phasellus luctus rutrum quam, id fermentum nisl. Vestibulum quis massa at est commodo porta non et nulla. ",
+    pages: 1200,
+    author: "Author-#{n+1}",
+    publish_time: "1/1/2011",
+    category_id: 3,
   )
 end
 
