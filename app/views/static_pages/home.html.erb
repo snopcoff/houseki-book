@@ -78,11 +78,7 @@
             </div>
             <div class="w3-row-padding" style="margin:0 -16px">
               <div class="td-image-auto">
-                <% unless review.book.picture.url.nil? %>
-                  <%= image_tag review.book.picture.url, class: "width fix-height" %>
-                <% else %>
-                  <%= image_tag "books.jpg", class: "width fix-height" %>
-                <% end %>
+                <%= image_tag book_image(review.book) %>
               </div>
             </div>
             <button type="button" class="w3-btn td-background w3-margin-bottom">
