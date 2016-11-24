@@ -78,8 +78,7 @@
             </div>
             <div class="w3-row-padding" style="margin:0 -16px">
               <div class="td-image-auto">
-                <% byebug %>
-                <%= image_tag book_image(review.book) %>
+                <%= image_tag book_image(review.book), class: "width fix-height" %>
               </div>
             </div>
             <button type="button" class="w3-btn td-background w3-margin-bottom">
