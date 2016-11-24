@@ -73,6 +73,7 @@ en:
   page:
     categories: Categories
     books: Books
+    homepage: Home Page
   destroy:
     confirm: Are you sure?
     button: Destroy

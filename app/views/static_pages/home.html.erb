@@ -43,31 +43,7 @@
           </div>
         </div>
         <!-- Accordion -->
-        <div class="w3-card-2 w3-round">
-          <div class="w3-accordion w3-white">
-              <button onclick="myFunction('Demo1')"
-                class="w3-btn-block td-background w3-left-align">
-                <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>
-                <%= t "home.reviews" %>
-              </button>
-              <div id="Demo1" class="w3-accordion-content w3-container">
-                <p><%= t "home.text" %></p>
-              </div>
-          </div>
-        </div>
       <% end %>
-      <div class="w3-card-2 w3-round">
-        <div class="w3-accordion w3-white">
-            <button onclick="myFunction('Demo1')"
-              class="w3-btn-block td-background w3-left-align">
-              <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>
-              <%= t "home.reviews" %>
-            </button>
-            <div id="Demo1" class="w3-accordion-content w3-container">
-              <p><%= t "home.text" %></p>
-            </div>
-        </div>
-      </div>
     <!-- End Left Column -->
     </div>
 
@@ -111,7 +87,7 @@
                 w3-btn td-background w3-margin-bottom margin-right",
                 method: :delete, data: {confirm: "Are you sure??"} %>
             <% end %>
-            <% unless current_user.nil? %>
+            <% unless current_user.nil? || current_user.is_admin == true %>
               <div style="margin: 20px 0;" id="td-comment">
                 <%= render "comments/comment_form",book: review.book, review: review,
                   comment: review.user.comments.build %>

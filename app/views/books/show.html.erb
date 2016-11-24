@@ -68,7 +68,7 @@
     <div class="clearfix"></div>
   </div>
 
-  <% unless current_user.nil? %>
+  <% unless current_user.nil? || current_user.is_admin == true %>
     <div class="td-invoice-box padding">
       <div id="review_form">
         <%= render "shared/review_form", review: @review_new %>
