@@ -1,3 +1,14 @@
+<div class="container">
+  <div class="swiper-container margin-top-50 td-random-view">
+    <div class="swiper-wrapper">
+      <% @book_random.each do |random| %>
+        <%= link_to book_path(random), class: "swiper-slide" do %>
+          <%= image_tag book_image(random), class: "swiper-slide" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
   <!-- The Grid -->
@@ -5,12 +16,12 @@
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <% unless current_user.nil? %>
+      <% if current_user %>
         <div class="w3-card-2 w3-round w3-white">
           <div class="w3-container">
             <h4 class="w3-center"><%= t "home.profile" %></h4>
             <p class="w3-center">
-              <% unless current_user.avatar.url.nil? %>
+              <% if current_user.avatar.url %>
                 <%= image_tag current_user.avatar.url, class: "w3-circle td-img-avatar" %>
               <% else %>
                 <%= image_tag "noprofile.jpg", class: "w3-circle td-img-avatar" %>
@@ -31,13 +42,22 @@
             </p>
           </div>
         </div>
+        <!-- Accordion -->
+        <div class="w3-card-2 w3-round">
+          <div class="w3-accordion w3-white">
+              <button onclick="myFunction('Demo1')"
+                class="w3-btn-block td-background w3-left-align">
+                <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>
+                <%= t "home.reviews" %>
+              </button>
+              <div id="Demo1" class="w3-accordion-content w3-container">
+                <p><%= t "home.text" %></p>
+              </div>
+          </div>
+        </div>
       <% end %>
-      <br>
-
-      <!-- Accordion -->
       <div class="w3-card-2 w3-round">
         <div class="w3-accordion w3-white">
-          <% unless current_user.nil? %>
             <button onclick="myFunction('Demo1')"
               class="w3-btn-block td-background w3-left-align">
               <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>
@@ -46,16 +66,8 @@
             <div id="Demo1" class="w3-accordion-content w3-container">
               <p><%= t "home.text" %></p>
             </div>
-          <% end %>
-          <%= link_to book_path(@book_random),
-            class: "w3-btn-block td-background w3-left-align td-hover" do %>
-            <i class="fa fa-book fa-fw w3-margin-right"></i>
-            <%= t :random_book %>
-          <% end %>
         </div>
       </div>
-      <br>
-
     <!-- End Left Column -->
     </div>
 
@@ -147,3 +159,24 @@
 <!-- End Page Container -->
 </div>
 <br>
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+  pagination: '.swiper-pagination',
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  autoplay: 2500,
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplayDisableOnInteraction: false,
+  coverflow: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows : true
+  }
+});
+</script>
