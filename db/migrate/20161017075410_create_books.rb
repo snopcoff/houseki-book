@@ -8,6 +8,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.date :publish_time
       t.string :picture
       t.string :favorite
+      t.decimal :rate_score, default: 0.0
       t.references :category, index: true, foreign_key: true
 
       t.timestamps

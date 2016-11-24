@@ -10,6 +10,9 @@
   <span class="bold"><%= review.user.username %></span><br>
   <hr class="w3-clear">
   <p class="td-white_space"><%= review.content %></p>
+  <div>
+    <span class="review-rating" data-score="<%= review.rating %>" ></span>
+  </div>
   <div class="w3-row-padding" style="margin:0 -16px">
     <div class="td-image-auto">
       <% unless review.book.picture.url.nil? %>

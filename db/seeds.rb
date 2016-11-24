@@ -81,13 +81,13 @@ end
   )
 end
 
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.",
+Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
   user_id: 2, book_id: 1
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.",
+Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
   user_id: 2, book_id: 3
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.",
+Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
   user_id: 2, book_id: 5
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.",
+Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
   user_id: 2, book_id: 7
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.",
+Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
   user_id: 2, book_id: 9
