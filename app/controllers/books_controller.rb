@@ -1,8 +1,10 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.order_by_time.page(params[:page]).per Settings.size
+    books_all = Book.order_by_time.page(params[:page]).per Settings.size
     @categories = Category.all
+    @q = books_all.ransack params[:q]
+    @books = @q.result.page(params[:page]).per Settings.default_size
   end
 
   def show

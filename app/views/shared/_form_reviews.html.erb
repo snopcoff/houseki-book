@@ -28,7 +28,7 @@
   <% if can? [:edit, :update], review %>
     <%= link_to t(:edit), edit_book_review_path(review.book, review),
       class: "w3-btn td-background w3-margin-bottom pull-right" %>
-    <%= link_to "Delete", book_review_path(review), class: "pull-right
+    <%= link_to "Delete", book_review_path(review.book, review), class: "pull-right
       w3-btn td-background w3-margin-bottom margin-right",
       method: :delete, data: {confirm: "Are you sure??"} %>
   <% end %>
@@ -38,11 +38,9 @@
         comment: review.user.comments.build %>
     </div>
   <% end %>
-  <div class="comments">
+  <div class="comments" id="comments_<%= review.id %>">
     <% if review.comments.any? %>
-      <% review.comments.each do |comment| %>
-        <%= render "comments/comment", comment: comment %>
-      <% end %>
+      <%= render review.comments.order_by_time %>
     <% end %>
   </div>
 </div>
