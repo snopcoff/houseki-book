@@ -4,7 +4,7 @@ class BooksController < ApplicationController
     books_all = Book.order_by_time.page(params[:page]).per Settings.size
     @categories = Category.all
     @q = books_all.ransack params[:q]
-    @books = @q.result.page(params[:page]).per Settings.default_size
+    @books = @q.result.page(params[:page]).per Settings.max_page
   end
 
   def show
