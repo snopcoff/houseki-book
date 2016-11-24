@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_review_book, only: [:edit, :update, :destroy]
+  after_action :calculate_score, only: :destroy
 
   def new
     review = current_user.reviews.new review_params
@@ -13,7 +14,7 @@ class ReviewsController < ApplicationController
     review.book_id = book.id
     if review.save
       flash[:success] = t "reviews.success"
-      redirect_to root_path
+      redirect_to book
     else
       flash[:danger] = t "reviews.danger"
       redirect_to :back
@@ -50,9 +51,18 @@ class ReviewsController < ApplicationController
 
   def find_review_book
     @review = Review.find_by_id params[:id]
-    byebug
     check_null @review
     @book = @review.book
     check_null @book
+  end
+
+  def calculate_score
+    sum = @book.reviews.reduce(0) {|sum, element| sum + element.rating}
+    if @book.reviews.size == 0
+      average_score = 0
+    else
+      average_score = sum / @book.reviews.count
+    end
+    @book.update_attribute :rate_score, average_score
   end
 end
