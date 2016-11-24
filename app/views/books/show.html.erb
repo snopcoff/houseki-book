@@ -12,9 +12,7 @@
         <% else %>
           <%= image_tag "books.jpg", class: "width fix-height" %>
         <% end %>
-        <div id="td-rate-book">
-          <%= render "book_rate" %>
-        </div>
+      <span class="average-review-rating" data-score="<%= @book.rate_score %>"></span>
       </div>
       <div class="td-invoice-content-right">
         <div class="td-line">

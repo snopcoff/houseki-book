@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20161109162056) do
     t.date     "publish_time"
     t.string   "picture"
     t.string   "favorite"
+    t.decimal  "rate_score",   default: "0.0"
     t.integer  "category_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["category_id"], name: "index_books_on_category_id"
   end
 
@@ -84,14 +85,14 @@ ActiveRecord::Schema.define(version: 20161109162056) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "content"
-    t.integer  "rated"
+    t.decimal  "rating"
     t.integer  "user_id"
     t.integer  "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
-    t.index ["rated", "created_at"], name: "index_reviews_on_rated_and_created_at"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index [nil, "created_at"], name: "index_reviews_on_rated_and_created_at"
   end
 
   create_table "users", force: :cascade do |t|

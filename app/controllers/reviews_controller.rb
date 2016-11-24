@@ -45,11 +45,12 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit :content, :rated
+    params.require(:review).permit :content, :rating
   end
 
   def find_review_book
     @review = Review.find_by_id params[:id]
+    byebug
     check_null @review
     @book = @review.book
     check_null @book
