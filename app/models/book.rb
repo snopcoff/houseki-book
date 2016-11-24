@@ -2,7 +2,7 @@ class Book < ApplicationRecord
   ratyrate_rateable "favorite"
   belongs_to :category
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   validates :category_id, presence: true
   validates :title, presence: true, length: {maximum: Settings.max_value}
