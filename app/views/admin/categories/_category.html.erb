@@ -1,5 +1,5 @@
 <tr>
-  <td><%= category.name %></td>
+  <td><%= link_to category.name, admin_category_path(category) %></td>
   <td>
     <%= link_to t("books.create"), new_admin_book_path(category),
       class: "btn btn-primary hvr-pulse-shrink" %>

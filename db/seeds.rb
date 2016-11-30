@@ -10,7 +10,13 @@ User.create! username: "Admin", email: "admin@gmail.com",
 User.create! username: "User", email: "user@gmail.com",
   password: "123456", password_confirmation: "123456", is_admin: false,
   feelings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor sem eu leo fringilla ornare. Cras tellus felis, rutrum id ante id, rhoncus lacinia libero."
+(1..10).each do |n|
+  User.create! username: "user-#{n}", email: "user#{n}@gmail.com", password: "123456",
+    password_confirmation: "123456", is_admin: false,
+    feelings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor sem eu leo fringilla ornare. Cras tellus felis, rutrum id ante id, rhoncus lacinia libero."
+end
 
+Category.create! name: "Books not have Category"
 Category.create! name: "Short Story"
 Category.create! name: "Long Story"
 Category.create! name: "Love Story"
@@ -22,7 +28,7 @@ Category.create! name: "Love Story"
     pages: 1200,
     author: "Author-#{n+1}",
     publish_time: "1/1/2011",
-    category_id: 1,
+    category_id: 4,
   )
 end
 
@@ -33,7 +39,7 @@ end
     pages: 1200,
     author: "Author-#{n+1}",
     publish_time: "1/1/2011",
-    category_id: 1,
+    category_id: 4,
   )
 end
 
@@ -81,13 +87,9 @@ end
   )
 end
 
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
-  user_id: 2, book_id: 1
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
-  user_id: 2, book_id: 3
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
-  user_id: 2, book_id: 5
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
-  user_id: 2, book_id: 7
-Review.create! content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus mollis faucibus. Cras nec consectetur justo. Cras tincidunt, sapien a congue tempus, sapien felis vestibulum enim, id dapibus mi velit maximus dolor. Quisque pellentesque libero nibh, a luctus est luctus id.", rating: 4,
-  user_id: 2, book_id: 9
+(3..12).each do |n|
+  (1..30).each do |m|
+    Review.create!(book_id: m, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu.",
+      rating: 4, user_id: n)
+  end
+end

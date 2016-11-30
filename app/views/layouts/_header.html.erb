@@ -15,7 +15,7 @@
               <%= t "books.new.category" %>
             </a>
             <div class="w3-dropdown-content td-dropdown-content w3-white w3-card-4">
-              <% Category.all.each do |f| %>
+              <% Category.all.without(Category.first).each do |f| %>
                 <%= link_to f.name, category_path(f) %>
               <% end %>
             </div>
@@ -23,7 +23,7 @@
           <%= link_to t("books.index.title"), books_path, class: "navbar-brand" %>
         </div>
 
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse" style="float:right">
           <ul class="nav navbar-nav navbar-right">
             <li>
               <%= link_to t("devise.log_in"),  new_user_session_path %>
@@ -58,7 +58,7 @@
         <%= t "books.new.category" %>
       </a>
       <div class="w3-dropdown-content w3-white w3-card-4">
-        <% Category.all.each do |f| %>
+        <% Category.all.without(Category.first).each do |f| %>
           <%= link_to f.name, category_path(f) %>
         <% end %>
       </div>

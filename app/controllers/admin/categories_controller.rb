@@ -1,4 +1,5 @@
 class Admin::CategoriesController < ApplicationController
+  before_action :verify_admin
   before_action :find_category, except: [:index, :new, :create]
 
   def index
@@ -10,6 +11,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
+    @books = @category.books.order_by_time.page(params[:page]).per Settings.size
   end
 
   def edit
@@ -17,7 +19,7 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     if @category.update_attributes category_params
-      flash[:success] = t "categoryindex.update_successS"
+      flash[:success] = t "categoryindex.update_success"
       redirect_to admin_categories_path
     else
       render :edit
@@ -36,10 +38,15 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    if @category.destroy
-      flash[:success] = t "categoryindex.delete_success"
-      redirect_to admin_categories_path
+    unless @category == Category.first
+      if @category.destroy
+        @category.books.update_all category_id: 1
+        flash[:success] = t "categoryindex.delete_success"
+      end
+    else
+      flash[:danger] = "You can't delete this Category"
     end
+    redirect_to admin_categories_path
   end
 
   private

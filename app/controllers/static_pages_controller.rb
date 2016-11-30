@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @categories = Category.all
+    @categories = Category.all.without Category.first
     @reviews = Review.order_by_time
     @book_random = Book.random
   end

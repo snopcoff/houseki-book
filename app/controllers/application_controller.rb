@@ -50,4 +50,11 @@ class ApplicationController < ActionController::Base
     controller_namespace = controller_name_segments.join('/').camelize
     Ability.new current_user, controller_namespace
   end
+
+  def verify_admin
+    unless current_user && current_user.is_admin?
+      flash[:danger] = t "error.permission"
+      redirect_to root_url
+    end
+  end
 end

@@ -25,6 +25,11 @@
   margin-top: 50px !important;
 }
 
+.width-80 {
+  width: 80%;
+  margin: 0 auto;
+}
+
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
 html{
@@ -480,4 +485,37 @@ footer {
 
 .td-book-a:hover {
   text-decoration: none;
+}
+
+.td-image-auto {
+  position: relative;
+  .td-book-info-hidden {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 20px);
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    h3 {
+      margin-bottom: 0 !important;
+      color: #FFF;
+    }
+    .content {
+      p {
+        color: #FFF;
+        margin-bottom: 3px !important;
+        .average-review-rating {
+          img {
+            margin-bottom: 5px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.td-image-auto:hover a .td-book-info-hidden {
+  display: block !important;
 }
