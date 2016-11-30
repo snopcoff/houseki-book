@@ -130,6 +130,7 @@ en:
     fail: "Sorry, something went wrong"
     errors: "Error"
     messengers: "The form contains "
+    permission: You don't have permission
   action: Action
   reviews:
     danger: create reviews fail
@@ -140,3 +141,7 @@ en:
   no_content: No review was created
   load_more: Load More
   show_less: Show Less
+  categoryindex:
+    update_success: Update Successfully
+    create_success: Create Successfully
+    delete_success: Delete Successfully

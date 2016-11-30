@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :books, dependent: :destroy
+  has_many :books
 
   scope :order_by_time, -> {order created_at: :desc}
 end

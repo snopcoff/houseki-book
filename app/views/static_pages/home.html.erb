@@ -43,15 +43,16 @@
           </div>
         </div>
         <!-- Accordion -->
-      <% end %>
-      <div class="w3-card-2 w3-round">
-        <div class="w3-card-2 w3-round w3-white">
-          <div class="w3-container">
-            <h4 class="w3-center"><%= t "home.profile" %></h4>
-            <p>No profile here</p>
+      <% else %>
+        <div class="w3-card-2 w3-round">
+          <div class="w3-card-2 w3-round w3-white">
+            <div class="w3-container">
+              <h4 class="w3-center"><%= t "home.profile" %></h4>
+              <p>No profile here</p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <!-- End Left Column -->
     </div>
 
@@ -69,16 +70,29 @@
               <span class="w3-right w3-opacity">
                 <%= time_ago_in_words review.created_at %>
               </span>
-              <span class="bold"><%= review.user.username %></span><br>
+              <span class="bold"><%= review.user.username %></span>
+              <span class="review-rating" data-score="<%= review.rating %>" style="margin-left: 100px">
+              </span>
             </div>
             <hr class="w3-clear">
             <p class="td-white_space"><%= review.content %></p>
-            <div>
-              <span class="review-rating" data-score="<%= review.rating %>" ></span>
-            </div>
             <div class="w3-row-padding" style="margin:0 -16px">
               <div class="td-image-auto">
-                <%= image_tag book_image(review.book), class: "width fix-height" %>
+                <%= image_tag book_image(review.book), class: "width fix-height book-hover" %>
+                <%= link_to book_path(review.book) do %>
+                  <div class="td-book-info-hidden">
+                    <h3 class="text-center"><%= review.book.title %></h3>
+                    <div class="content">
+                      <p class="text-center"><%= "" %> <%= review.book.author %></p>
+                      <p class="text-center">
+                        Rate score
+                        <span class="average-review-rating" data-score="<%= review.book.rate_score %>"></span>
+                      </p>
+                      <p class="text-center">Reviews: <%= review.book.reviews.size %></p>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                <% end %>
               </div>
             </div>
             <button type="button" class="w3-btn td-background w3-margin-bottom">
