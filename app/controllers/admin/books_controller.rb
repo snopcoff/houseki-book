@@ -1,7 +1,7 @@
 class Admin::BooksController < ApplicationController
-  before_action :find_book, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :verify_admin
+  before_action :find_book, only: [:edit, :update, :destroy]
 
   def index
     @books = Book.order_by_time.page(params[:page]).per Settings.size
@@ -56,7 +56,11 @@ class Admin::BooksController < ApplicationController
     params.require(:book).permit :title, :publish_time, :author,
       :pages, :picture, :category_id, :description
   end
+
   def find_book
     @book = Book.find params[:id]
+    unless @book
+      flash[:danger] = "this book is not exist"
+    end
   end
 end

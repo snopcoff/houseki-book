@@ -2,11 +2,14 @@
   <div class="review_form">
     <%= render "shared/error_messages", object: review %>
     <div class="td-review-create">
-      <div id="rating-form">
-        <label><%= t("views.reviews.new.rating") %></label>
+      <label><%= t("views.reviews.new.rating") %></label>
+      <div id="rating-form" style="padding-left: 5%;
+        padding-bottom: 20px">
       </div>
       <%= f.label :content, t("reviews.content") %>
-      <%= f.text_area :content, class: "form-control", id: "text" %>
+      <div style="width: 90%; margin: 0 auto">
+        <%= f.text_area :content, class: "form-control", id: "text" %>
+      </div>
     </div>
   </div>
   <div class="col-md-2 pull-right">

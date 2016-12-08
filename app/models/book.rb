@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  include PublicActivity::Model
+
   ratyrate_rateable "favorite"
   belongs_to :category
 

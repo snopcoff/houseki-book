@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     @categories = Category.all.without Category.first
     @book = Book.find_by_id params[:id]
     check_null @book
-    @reviews = @book.reviews.page(params[:page]).per Settings.size
+    @reviews = @book.reviews.order_by_time.page(params[:page]).per Settings.size
     @review_new = @reviews.build
   end
 end

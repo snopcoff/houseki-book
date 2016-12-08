@@ -1,0 +1,16 @@
+<p><%= t "home.top_book" %>:</p>
+<% @activities.each do |activity| %>
+  <div class="td-activity">
+    <p style="color: #000; font-weight: bold; font-size: 16px;
+      margin-bottom: 0 !important">
+      <%= activity.owner.username %>
+      has been
+      <%= activity.key %>
+      review
+    </p>
+    <p>
+      <%= time_ago_in_words activity.created_at %> ago
+    </p>
+  </div>
+<% end %>
+

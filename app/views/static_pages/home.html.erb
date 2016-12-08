@@ -9,6 +9,22 @@
     </div>
   </div>
 </div>
+
+<% if @posts %>
+  <div class="td-post w3-container w3-card-2 w3-white w3-round">
+    <div class="td-post-image">
+      <%= image_tag "event.png", class: "image-event img-responsive" %>
+    </div>
+    <div class="td-post-content">
+      <h2 class="text-center" style="margin-bottom: 20px;
+        font-weight: 600;">Event Now</h2>
+      <% @posts.each do |post| %>
+        <p class="text-center" style="margin-bottom: 5px;"><%= post.content %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
   <!-- The Grid -->
@@ -57,7 +73,7 @@
     </div>
 
     <!-- Middle Column -->
-    <div class="w3-col m7">
+    <div class="w3-col m6">
       <% unless @reviews.blank? %>
         <% @reviews.each do |review| %>
           <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
@@ -130,19 +146,13 @@
     </div>
 
     <!-- Right Column -->
-    <div class="w3-col m2">
+    <div class="w3-col m3">
       <div class="w3-card-2 w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p><%= t "home.top_book" %>:</p>
-          <img src="http://www.w3schools.com/css/img_fjords.jpg" alt="Forest"
-            class="width">
-          <p><strong><%= t "home.author" %></strong></p>
-          <p><%= t "home.short_description" %></p>
-          <p>
-            <button class="w3-btn w3-btn-block w3-theme-l4">
-            <%= t "home.detail" %>
-            </button>
-          </p>
+        <div class="w3-container" id="td-activity-list"
+          style="padding-top: 20px">
+          <marquee direction="up" style=" height: 300px;">
+            <%= render "public_activity/activities/activity" %>
+          </marquee>
         </div>
       </div>
       <br>

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   ratyrate_rater
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
