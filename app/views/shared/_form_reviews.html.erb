@@ -1,4 +1,4 @@
-<div class="w3-container w3-card-2 w3-white w3-round"><br>
+<div class="w3-container w3-card-2 w3-white w3-round" style="margin-bottom: 10px"><br>
   <% if current_user.present? %>
     <% unless current_user.avatar.url.nil? %>
       <%= image_tag current_user.avatar.url, class: "w3-circle td-img" %>

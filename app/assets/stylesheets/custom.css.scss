@@ -519,3 +519,22 @@ footer {
 .td-image-auto:hover a .td-book-info-hidden {
   display: block !important;
 }
+
+.td-post {
+  padding: 30px 0 !important;
+  min-height: 350px;
+  .td-post-image{
+    width: 30%;
+    position: relative;
+    padding-left: 35px;
+    margin-left: 10%;
+    .image-event {
+      float: left;
+      width: 100%;
+    }
+  }
+  .td-post-content {
+    float:left;
+    width: 60%;
+  }
+}

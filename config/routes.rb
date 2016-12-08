@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     root :to => "categories#index", as: :root
     resources :categories
     resources :books
+    resources :posts
   end
   resources :categories
   resources :books do

@@ -22,6 +22,7 @@ gem "ratyrate"
 gem "cloudinary"
 gem "font-awesome-rails"
 gem "ransack"
+gem "public_activity"
 
 group :development, :test do
   gem "byebug", platform: :mri

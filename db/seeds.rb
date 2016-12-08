@@ -88,8 +88,6 @@ end
 end
 
 (3..12).each do |n|
-  (1..30).each do |m|
-    Review.create!(book_id: m, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu.",
-      rating: 4, user_id: n)
-  end
+  Review.create!(book_id: 5, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu.",
+    rating: 4, user_id: n)
 end
