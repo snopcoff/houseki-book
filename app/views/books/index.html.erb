@@ -1,21 +1,6 @@
 <div class="container">
   <div id="main">
     <div class="inner td-index-book">
-      <%= search_form_for @q, url: books_path, class: "navbar-form
-        w3-container width-80" do |f| %>
-        <div class="input-group pull-left" style="width: 80%">
-          <span class="input-group-addon">
-            <i class="fa fa-info nht-icon" aria-hidden="true"></i>
-          </span>
-          <%= f.text_field :title_cont, placeholder: t("books.new.title"),
-            class: "form-control td-search_form" %>
-        </div>
-
-        <div class="nht-btn-search pull-right">
-          <%= f.submit t(:search), class: "btn btn-primary td-search_form", remote: true %>
-        </div>
-        <div class="clearfix"></div>
-      <% end %>
       <section class="tiles">
         <%= render "books_index" %>
       </section>

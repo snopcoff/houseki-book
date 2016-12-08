@@ -9,8 +9,10 @@
       class: "btn btn-primary hvr-pulse-shrink" %>
   </td>
   <td>
-    <%= link_to t("destroy.button"), admin_category_path(category),
-      method: :delete, class: "btn btn-danger hvr-pulse-shrink",
-      data: {confirm: t("destroy.confirm")} %>
+    <% if category.id != 1 %>
+      <%= link_to t("destroy.button"), admin_category_path(category),
+        method: :delete, class: "btn btn-danger hvr-pulse-shrink",
+        data: {confirm: t("destroy.confirm")} %>
+    <% end %>
   </td>
 </tr>

@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.width {
+.width-100 {
   width: 100%;
 }
 
@@ -411,10 +411,6 @@ footer {
   border: 2px solid #a9a9a9 !important
 }
 
-.navbar-form {
-  padding: 20px 16px !important;
-}
-
 .alert {
   position: absolute;
   top: 50px;
@@ -537,4 +533,13 @@ footer {
     float:left;
     width: 60%;
   }
+}
+
+.td-nav-before-signin li {
+  float: left;
+  list-style-type: none;
+}
+
+.td-search-before-signin {
+  background-color: #FFF
 }

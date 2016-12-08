@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :load_ransack
   layout :layout_by_user
 
   include CanCan::ControllerAdditions
@@ -10,6 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+  def load_ransack
+    books_all = Book.order_by_time.page(params[:page]).per Settings.size
+    @q = books_all.ransack params[:q]
+  end
 
   def configure_permitted_parameters
     added_attrs = [:username, :email, :password, :password_confirmation,
