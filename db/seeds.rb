@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create! username: "Admin", email: "admin@gmail.com",
   password: "123456", password_confirmation: "123456", is_admin: true
+
+=begin
 User.create! username: "User", email: "user@gmail.com",
   password: "123456", password_confirmation: "123456", is_admin: false,
   feelings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor sem eu leo fringilla ornare. Cras tellus felis, rutrum id ante id, rhoncus lacinia libero."
@@ -15,12 +17,13 @@ User.create! username: "User", email: "user@gmail.com",
     password_confirmation: "123456", is_admin: false,
     feelings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor sem eu leo fringilla ornare. Cras tellus felis, rutrum id ante id, rhoncus lacinia libero."
 end
-
+=end
 Category.create! name: "Books not have Category"
 Category.create! name: "Short Story"
 Category.create! name: "Long Story"
 Category.create! name: "Love Story"
 
+=begin
 5.times do |n|
   Book.create!(
     title: "Lorem Ipsum-#{n+1}",
@@ -91,3 +94,4 @@ end
   Review.create!(book_id: 5, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut nunc vehicula, rutrum urna at, malesuada libero. Etiam arcu eros, scelerisque id sodales quis, elementum rhoncus arcu.",
     rating: 4, user_id: n)
 end
+=end

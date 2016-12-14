@@ -8,6 +8,5 @@ class CreateReviews < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :reviews, [:rated, :created_at]
   end
 end

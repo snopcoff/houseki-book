@@ -46,7 +46,7 @@ en:
     like: Like
     comment: Comment
     time: 16 min
-    top_book: Upcoming Events
+    top_book: New Activities
     author: Author
     short_description: Short Description
     detail: Details
@@ -74,7 +74,7 @@ en:
     categories: Categories
     books: Books
     homepage: Home Page
-    posts: Posts
+    posts: Events
   destroy:
     confirm: Are you sure?
     button: Destroy
@@ -146,3 +146,6 @@ en:
     update_success: Update Successfully
     create_success: Create Successfully
     delete_success: Delete Successfully
+    create: Create
+    create_category: Create categories
+    cate_new: New Category

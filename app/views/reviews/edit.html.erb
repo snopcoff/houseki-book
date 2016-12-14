@@ -14,7 +14,7 @@
         <label><%= t("views.reviews.new.rating") %></label>
       </div>
       <%= review.label :content %>
-      <%= review.text_area :content, class: "form-control", id: "text" %>
+      <%= review.text_area :content, class: "form-control", id: "text", rows: 10, style: "resize: none;" %>
       <div class="w3-row-padding" style="margin:0 -16px">
         <div class="td-image-auto">
           <% unless review.object.book.picture.url.nil? %>

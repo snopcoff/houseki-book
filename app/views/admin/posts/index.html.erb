@@ -1,10 +1,10 @@
-<h1 class="text-center">All Post</h1>
-<%= link_to "New Post", new_admin_post_path,
+<h1 class="text-center">All Events</h1>
+<%= link_to "New Event", new_admin_post_path,
   class: "btn btn-primary button" %>
 <% @posts.each do |post| %>
   <div class="w3-container w3-card-2 w3-white w3-round" style="margin-top: 20px;
     padding: 20px 5%">
-    <p>Post <%= post.id %>:</p>
+    <p>Event <%= post.id %>:</p>
     <i><%= post.content %></i>
     <%= link_to t("action.edit"), edit_admin_post_path(post),
       class:"btn btn-warning hvr-pulse-shrink pull-right" %>
