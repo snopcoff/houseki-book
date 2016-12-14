@@ -74,6 +74,7 @@ en:
     categories: Categories
     books: Books
     homepage: Home Page
+    posts: Posts
   destroy:
     confirm: Are you sure?
     button: Destroy

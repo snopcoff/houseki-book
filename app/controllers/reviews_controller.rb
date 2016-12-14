@@ -12,6 +12,9 @@ class ReviewsController < ApplicationController
     book = Book.find_by_id params[:book_id]
     check_null book
     review.book_id = book.id
+    unless review.rating
+      review.rating = 0
+    end
     if review.save
       flash[:success] = t "reviews.success"
       redirect_to book

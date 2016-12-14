@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :find_category, except: [:index, :new, :create]
+  before_action :find_category
 
   def show
     @categories = Category.all.without Category.first
@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
 
   private
   def find_category
-    @categories = Category.all.without Category.first
+    @category = Category.find_by id: params[:id]
     if @category.nil?
       flash[:danger] = t "flash.cate_nil"
       redirect_to root_path
